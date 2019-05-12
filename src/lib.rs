@@ -75,6 +75,11 @@ pub use snafu_derive::Snafu;
 
 pub mod guide;
 
+#[cfg(feature = "unstable_futures")]
+extern crate futures as futures_std;
+#[cfg(feature = "unstable_futures")]
+pub mod futures;
+
 /// Ensure a condition is true. If it is not, return from the function
 /// with an error.
 ///
