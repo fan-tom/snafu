@@ -37,6 +37,8 @@ nightly_test_task:
     - cargo +nightly update -p backtrace-sys --precise 0.1.20
     - cargo +nightly update -p libc --precise 0.2.7
     - cargo +nightly test
+  compatibility_test_script:
+    - cargo test --manifest-path compatibility-tests/futures/Cargo.toml
   before_cache_script: rm -rf $CARGO_HOME/registry/index
 
 v1_34_test_task:
